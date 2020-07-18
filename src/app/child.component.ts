@@ -12,10 +12,11 @@ export class ChildComponent implements OnChanges {
 
 @Input() person
 
-  ngOnChanges(changes: SimpleChanges){
+    //it is called whenever the input properties change their value(reference)
+    ngOnChanges(changes: SimpleChanges){
 
-      console.log('childComponent ->> change detection')
-      
-  }
+        console.log('childComponent ->> change detection')
+        
+    }
 
 }

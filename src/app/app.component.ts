@@ -17,6 +17,7 @@ export class AppComponent implements OnChanges {
         name: 'Paperino'
     }
 
+    //it is never called in the root component because it is used only for @Input properties
     ngOnChanges(changes: SimpleChanges){
 
         console.log('appComponent ->> change detection')
