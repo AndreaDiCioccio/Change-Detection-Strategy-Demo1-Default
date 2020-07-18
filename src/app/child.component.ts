@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
     selector: 'app-child',
@@ -11,8 +11,6 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 export class ChildComponent implements OnChanges {
 
 @Input() person
-
-  constructor() { }
 
   ngOnChanges(changes: SimpleChanges){
 
