@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, DoCheck } from '@angular/core';
 
 @Component({
     selector: 'app-child',
@@ -8,15 +8,17 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
     `
 })
 
-export class ChildComponent implements OnChanges {
+export class ChildComponent implements OnChanges, DoCheck {
 
 @Input() person
 
     //it is called whenever the input properties change their value(reference)
     ngOnChanges(changes: SimpleChanges){
-
         console.log('childComponent ->> change detection')
-        
+    }
+
+    ngDoCheck(){
+        console.log('childComponent --> check')
     }
 
 }

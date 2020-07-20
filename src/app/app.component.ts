@@ -1,4 +1,4 @@
-import { Component, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, SimpleChanges, DoCheck } from '@angular/core';
 
 @Component({
     selector: 'app-root',
@@ -11,17 +11,19 @@ import { Component, OnChanges, SimpleChanges } from '@angular/core';
     `
 })
 
-export class AppComponent implements OnChanges {
+export class AppComponent implements OnChanges, DoCheck {
 
     person = {
         name: 'Paperino'
     }
 
-    //it is never called in the root component because it is used only for @Input properties
+    //it is not called in the root component because it is used only for @Input properties
     ngOnChanges(changes: SimpleChanges){
-
         console.log('appComponent ->> change detection')
+    }
 
+    ngDoCheck(){
+        console.log('appComponent --> check')
     }
 
     changeName1(){
