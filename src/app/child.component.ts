@@ -13,7 +13,7 @@ export class ChildComponent implements OnChanges {
 
 @Input() person
 
-    //it is called whenever CD detect at least one change
+    //it is called whenever CD detect at least one change in @Input variables
     ngOnChanges(changes: SimpleChanges){
         console.log('childComponent --> change detected')
     }
