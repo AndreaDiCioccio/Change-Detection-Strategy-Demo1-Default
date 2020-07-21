@@ -40,7 +40,7 @@ export class AppComponent implements OnChanges {
 
     //it is called upon each rendering
     cd(){
-        console.log('appComponent --> change detection')
+        console.log('appComponent --> rendering')
     }
 
 }
