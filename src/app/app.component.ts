@@ -1,4 +1,4 @@
-import { Component, OnChanges, SimpleChanges, DoCheck } from '@angular/core';
+import { Component, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
     selector: 'app-root',
