@@ -5,20 +5,22 @@ import { Component, Input, OnChanges, SimpleChanges, DoCheck } from '@angular/co
     template: `
         <h2>Child Component</h2>
         <h3>name: {{person.name}}</h3>
+        {{cd()}}
     `
 })
 
-export class ChildComponent implements OnChanges, DoCheck {
+export class ChildComponent implements OnChanges {
 
 @Input() person
 
-    //it is called whenever the input properties change their value(reference)
+    //it is called whenever CD detect at least one change
     ngOnChanges(changes: SimpleChanges){
-        console.log('childComponent ->> change detection')
+        console.log('childComponent --> change detected')
     }
 
-    ngDoCheck(){
-        console.log('childComponent --> check')
+    cd(){
+        console.log('childComponent --> change detection')
     }
+
 
 }

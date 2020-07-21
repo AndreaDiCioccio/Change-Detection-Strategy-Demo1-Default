@@ -7,23 +7,21 @@ import { Component, OnChanges, SimpleChanges, DoCheck } from '@angular/core';
         <h3>name: {{person.name}}</h3>
         <button (click)="changeName1()">Chanage Name 1</button>
         <button (click)="changeName2()">Chanage Name 2</button>
+        <button (click)="doNothing()">Do Nothing</button>
         <app-child [person]="person"></app-child>
+        {{cd()}}
     `
 })
 
-export class AppComponent implements OnChanges, DoCheck {
+export class AppComponent implements OnChanges {
 
     person = {
         name: 'Paperino'
     }
 
-    //it is not called in the root component because it is used only for @Input properties
+    ////it is called whenever CD detect at least one change
     ngOnChanges(changes: SimpleChanges){
-        console.log('appComponent ->> change detection')
-    }
-
-    ngDoCheck(){
-        console.log('appComponent --> check')
+        console.log('appComponent --> change detected')
     }
 
     changeName1(){
@@ -34,6 +32,14 @@ export class AppComponent implements OnChanges, DoCheck {
         this.person = {
             name: 'Zio Paperone'
         }
+    }
+
+    doNothing(){
+
+    }
+
+    cd(){
+        console.log('appComponent --> change detection')
     }
 
 }
