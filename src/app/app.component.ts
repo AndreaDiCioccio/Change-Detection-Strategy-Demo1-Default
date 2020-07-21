@@ -24,10 +24,12 @@ export class AppComponent implements OnChanges {
         console.log('appComponent --> change detected')
     }
 
+    //do not change reference
     changeName1(){
         this.person.name = 'Gastone'
     }
 
+    //change reference
     changeName2(){
         this.person = {
             name: 'Zio Paperone'
@@ -38,7 +40,7 @@ export class AppComponent implements OnChanges {
 
     }
 
-    //it is called upon each rendering
+    ///it is called to every rendering
     cd(){
         console.log('appComponent --> rendering')
     }

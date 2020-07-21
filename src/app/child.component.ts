@@ -23,7 +23,7 @@ export class ChildComponent implements OnChanges {
         
     }
 
-    //it is called upon each rendering
+    //it is called to every rendering
     cd(){
         console.log('childComponent --> rendering')
     }
