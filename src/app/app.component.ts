@@ -19,7 +19,7 @@ export class AppComponent implements OnChanges {
         name: 'Paperino'
     }
 
-    ////it is called whenever CD detect at least one change
+    //it is called whenever CD detect at least one change in @Input variables, here is never called 'couse there is not @Input
     ngOnChanges(changes: SimpleChanges){
         console.log('appComponent --> change detected')
     }
@@ -38,6 +38,7 @@ export class AppComponent implements OnChanges {
 
     }
 
+    //it is called upon each rendering
     cd(){
         console.log('appComponent --> change detection')
     }
