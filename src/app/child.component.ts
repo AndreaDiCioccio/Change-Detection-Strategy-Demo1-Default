@@ -5,6 +5,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
     template: `
         <h2>Child Component</h2>
         <h3>name: {{person.name}}</h3>
+        <button (click)="doNothing()">Do Nothing</button>
         {{cd()}}
     `
 })
@@ -16,6 +17,10 @@ export class ChildComponent implements OnChanges {
     //it is called whenever CD detect at least one change in @Input variables
     ngOnChanges(changes: SimpleChanges){
         console.log('childComponent --> change detected')
+    }
+
+    doNothing(){
+        
     }
 
     //it is called upon each rendering
