@@ -19,17 +19,19 @@ export class AppComponent implements OnChanges {
         name: 'Paperino'
     }
 
-    //it is called whenever CD detect at least one change in @Input variables, here is never called 'couse there is not @Input
+    // it is called whenever CD detects at least one change in @Input variables, 
+    // here is never called 'couse there is not @Input
     ngOnChanges(changes: SimpleChanges){
         console.log('appComponent --> change detected')
     }
 
-    //do not change reference
+    // do not change reference
+    // nel componente child il valore viene aggiornato perchè la CD di default scatta ad ogni evento
     changeName1(){
         this.person.name = 'Gastone'
     }
 
-    //change reference
+    // change reference
     changeName2(){
         this.person = {
             name: 'Zio Paperone'
@@ -40,7 +42,7 @@ export class AppComponent implements OnChanges {
 
     }
 
-    ///it is called to every rendering
+    // it is called to every rendering
     cd(){
         console.log('appComponent --> rendering')
     }

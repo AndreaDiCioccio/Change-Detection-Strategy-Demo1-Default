@@ -12,9 +12,10 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 export class ChildComponent implements OnChanges {
 
+// con la CD di dafault è sempre aggiornato, ad ogni evento
 @Input() person
 
-    //it is called whenever CD detect at least one change in @Input variables
+    //it is called whenever CD detects at least one change in @Input variables
     ngOnChanges(changes: SimpleChanges){
         console.log('childComponent --> change detected')
     }
@@ -27,6 +28,5 @@ export class ChildComponent implements OnChanges {
     cd(){
         console.log('childComponent --> rendering')
     }
-
 
 }
