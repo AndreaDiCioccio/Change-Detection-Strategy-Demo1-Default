@@ -5,8 +5,8 @@ import { Component, OnChanges, SimpleChanges } from '@angular/core';
     template: `
         <h1>Default Change Detection Demo1</h1>
         <h3>name: {{person.name}}</h3>
-        <button (click)="changeName1()">Chanage Name 1</button>
-        <button (click)="changeName2()">Chanage Name 2</button>
+        <button (click)="changeName1()">Chanage Property Value</button>
+        <button (click)="changeName2()">Chanage Object Reference</button>
         <button (click)="doNothing()">Do Nothing</button>
         <app-child [person]="person"></app-child>
         {{cd()}}
@@ -26,7 +26,7 @@ export class AppComponent implements OnChanges {
     }
 
     // do not change reference
-    // nel componente child il valore viene aggiornato perchè la CD di default scatta ad ogni evento
+    // the value in the child component is updated 'couse the CD snaps on every events, then does rendering
     changeName1(){
         this.person.name = 'Gastone'
     }
