@@ -5,8 +5,8 @@ import { Component, OnChanges, SimpleChanges } from '@angular/core';
     template: `
         <h1>Default Change Detection Strategy Demo</h1>
         <h3>name: {{person.name}}</h3>
-        <button (click)="changeName1()">Chanage Property Value</button>
-        <button (click)="changeName2()">Chanage Object Reference</button>
+        <button (click)="changePropertyValue()">Chanage Property Value</button>
+        <button (click)="changeObjectReference()">Chanage Object Reference</button>
         <button (click)="doNothing()">Do Nothing</button>
         <app-child [person]="person"></app-child>
         {{cd()}}
@@ -27,12 +27,12 @@ export class AppComponent implements OnChanges {
 
     // do not change reference
     // the value in the child component is updated 'couse the CD snaps on every events, then does rendering
-    changeName1(){
+    changePropertyValue(){
         this.person.name = 'Gastone'
     }
 
     // change reference
-    changeName2(){
+    changeObjectReference(){
         this.person = {
             name: 'Zio Paperone'
         }
